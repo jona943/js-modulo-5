@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ana García",
+    "edad": 28,
+    "email": "ana@example.com",
+    "activo": true,
+    "hobbies": ["leer", "correr"]
+  },
+  {
+    "id": 2,
+    "nombre": "Luis Martínez",
+    "edad": 34,
+    "email": "luis@example.com",
+    "activo": false,
+    "hobbies": ["videojuegos", "cocinar"]
+  },
+  {
+    "id": 3,
+    "nombre": "María López",
+    "edad": 22,
+    "email": "maria@example.com",
+    "activo": true,
+    "hobbies": ["yoga", "viajar", "fotografía"]
+  },
+  {
+    "id": 4,
+    "nombre": "Pedro Sánchez",
+    "edad": 41,
+    "email": "pedro@example.com",
+    "activo": true,
+    "hobbies": ["jardinería"]
+  },
+  {
+    "id": 5,
+    "nombre": "Sofía Ramírez",
+    "edad": 19,
+    "email": "sofia@example.com",
+    "activo": false,
+    "hobbies": ["música", "arte"]
+  }
+]
