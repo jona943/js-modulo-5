@@ -30,6 +30,8 @@ function agregarLibro(titulo, autor, genero, disponible) {
     // Aquí falta la simulación de escribir el libro en el "archivo" (es decir, agregarlo al objeto)
     setTimeout(() => {
         // Pista: deberías agregar el nuevo libro a `biblioteca.libros`
+        biblioteca.libros.push(nuevoLibro); // Metodo push agrega un nuevo elemento
+        console.log(`Libro "${titulo}" agregado con éxito.`);
     }, 1000);
 }
 
@@ -38,6 +40,15 @@ function actualizarDisponibilidad(titulo, nuevoEstado) {
     // Simula un retraso antes de actualizar la disponibilidad
     setTimeout(() => {
         // Pista: busca el libro por título y cambia la propiedad 'disponible' a nuevoEstado
+        let libro = biblioteca.libros.find(lib => lib.titulo === titulo);
+
+        if (libro) {
+            libro.disponible = nuevoEstado;
+            console.log(`Disponibilidad de "${titulo}" actualizada.`);
+        } else {
+            console.log(`El libro "${titulo}" no fue encontrado.`)
+        }
+
     }, 1000);
 }
 
@@ -45,3 +56,5 @@ function actualizarDisponibilidad(titulo, nuevoEstado) {
 mostrarLibros();
 agregarLibro("El principito", "Antoine de Saint-Exupéry", "Fábula", true);
 actualizarDisponibilidad("1984", false);
+
+mostrarLibros();
