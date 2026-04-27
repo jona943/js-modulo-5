@@ -25,13 +25,15 @@ function mostrarLibros() {
 }
 
 // Función para agregar un nuevo libro
-function agregarLibro(titulo, autor, genero, disponible) {
+function agregarLibro(titulo, autor, genero, disponible, callback) {
     const nuevoLibro = { titulo, autor, genero, disponible };
     // Aquí falta la simulación de escribir el libro en el "archivo" (es decir, agregarlo al objeto)
     setTimeout(() => {
         // Pista: deberías agregar el nuevo libro a `biblioteca.libros`
         biblioteca.libros.push(nuevoLibro); // Metodo push agrega un nuevo elemento
         console.log(`Libro "${titulo}" agregado con éxito.`);
+
+        if (callback) callback();
     }, 1000);
 }
 
@@ -47,7 +49,8 @@ function actualizarDisponibilidad(titulo, nuevoEstado) {
             console.log(`Disponibilidad de "${titulo}" actualizada.`);
         } else {
             console.log(`El libro "${titulo}" no fue encontrado.`)
-        }
+        };
+
 
     }, 1000);
 }
