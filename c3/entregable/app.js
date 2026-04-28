@@ -13,6 +13,7 @@ fetchBtn.addEventListener('click', () => {
     .then(data => {
       // Completar: renderizar datos en el contenedor
       // Pista: Usa `data.results` para iterar sobre los personajes obtenidos.
+      renderCharacters(data.results);
     }) 
     .catch(error => {
       console.error('Error:', error);
@@ -34,6 +35,7 @@ axiosBtn.addEventListener('click', () => {
       const data = response.data;
       // Completar: renderizar datos en el contenedor
       // Pista: Observa que Axios ya convierte la respuesta JSON, por lo que no necesitas usar `.json()`.
+      renderCharacters(data.results);
     })
     .catch(error => {
       console.error('Error:', error);
