@@ -9,6 +9,11 @@ function verificarDisponibilidad(mesasSolicitadas) {
     setTimeout(() => {
       // Completa la lógica aquí: Si hay suficientes mesas disponibles, resuelve la promesa, 
       // de lo contrario, recházala con un mensaje adecuado.
+      if (mesasSolicitadas <= mesasDisponibles) {
+        resolve(`Tenemos disponibilidad..!! Tenemos ${mesasSolicitadas} disponibles para ti.`)
+      } else {
+        reject(`Error: solo nos quedan ${mesasDisponibles} mesas disponibles`)
+      }
     }, 2000);  // Simula un retraso en la verificación (2 segundos)
   });
 }
@@ -19,6 +24,12 @@ function enviarConfirmacionReserva(nombreCliente) {
     setTimeout(() => {
       // Completa la lógica aquí: Simula un envío de correo. Usa Math.random() 
       // para simular si el correo se envió correctamente o si ocurrió un error.
+      const exito = Math.random() > 0.2; 
+      if (exito) {
+        resolve(`Confirmacion enviada con exito a ${nombreCliente}`);
+      } else {
+        reject(`Error al enviar el correo de confirmacion a ${nombreCliente}`);
+      }
     }, 1500);  // Simula el envío de un correo (1.5 segundos)
   });
 }
@@ -28,9 +39,15 @@ async function hacerReserva(nombreCliente, mesasSolicitadas) {
   try {
     console.log("Verificando disponibilidad de mesas...");
     const disponibilidad = await verificarDisponibilidad(mesasSolicitadas);  // Llama a la función de verificación
+    console.log(disponibilidad);
     
     // Completa el flujo aquí: Si hay mesas disponibles, llama a la función para enviar la confirmación.
     // Si no hay mesas disponibles o si ocurre un error, captura el error.
+    const confirmacion = await enviarConfirmacionReserva(nombreCliente);
+    console.log(confirmacion);
+
+    console.log('Tu reserva ha sido procesada..!!')
+
   } catch (error) {
     console.log("Error:", error);  // Maneja los errores en la promesa
   }
@@ -38,3 +55,5 @@ async function hacerReserva(nombreCliente, mesasSolicitadas) {
 
 // Llamada de prueba
 hacerReserva("Juan Pérez", 3);  // Intenta hacer una reserva para 3 personas
+hacerReserva("Ana García", 10);
+hacerReserva("Emilia Galaviz", 1);
