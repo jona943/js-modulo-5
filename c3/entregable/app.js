@@ -13,7 +13,7 @@ fetchBtn.addEventListener('click', () => {
     .then(data => {
       // Completar: renderizar datos en el contenedor
       // Pista: Usa `data.results` para iterar sobre los personajes obtenidos.
-    })
+    }) 
     .catch(error => {
       console.error('Error:', error);
       dataContainer.textContent = 'Hubo un error al obtener los datos.';
