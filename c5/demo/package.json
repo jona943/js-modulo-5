@@ -1,0 +1,12 @@
+{
+  "name": "frase-del-dia",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "dayjs": "^1.11.20"
+  }
+}
