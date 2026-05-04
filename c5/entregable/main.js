@@ -11,7 +11,7 @@ document.getElementById('registroEvento').addEventListener('submit', function (e
     const hora = document.getElementById('hora').value;
 
     // Validaciones básicas
-    if (!nombre || !correo || !telefono || intereses.length === 0 || !horario) {
+    if (!nombre || !correo || !telefono || intereses.length === 0 || !fecha || !horario) {
         alert('Por favor, completa todos los campos obligatorios.');
         return;
     }
