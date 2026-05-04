@@ -1,0 +1,117 @@
+/* Estilo sutil */
+:root {
+    --primary-color: #4a90e2;
+    --text-color: #333;
+    --bg-color: #f8f9fa;
+    --border-color: #ddd;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-weight: 300;
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Agrupar etiquetas de checkbox y radio */
+form > label:not([for]) {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="file"] {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* Estilos para Checkboxes y Radios */
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+form label label {
+    display: inline-flex;
+    align-items: center;
+    font-weight: normal;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+
