@@ -23,6 +23,7 @@ document.getElementById('registroEvento').addEventListener('submit', function (e
         alert('Ingresa un nombre valido..!! (Minimo de 3 caracteres)');
         return;
     }
+    // ------------------
 
     // Validacion de Telefono a 10 digitos ni mayor ni menor
     const valorTelefono = 10;
@@ -36,9 +37,18 @@ document.getElementById('registroEvento').addEventListener('submit', function (e
         alert(`Solo se permite un máximo de ${valorTelefono} Digitos`);
         return;
     }
+    // ------------------
 
+    // Validacion de fecha que no sea pasada
+    const fechaSeleccionada = new Date(fecha);
+    const hoy = new Date()
+    console.log(hoy);
+    hoy.setHours(0, 0, 0, 0); // Limpieza de hora para comparacion directa de fechas
 
-
+    if (fechaSeleccionada < hoy) {
+        alert('La fecha del evento no puede ser una fecha pasada ');
+        return;
+    }
 
     // Si todo está bien
     alert('Registro exitoso. ¡Gracias por registrarte!');
