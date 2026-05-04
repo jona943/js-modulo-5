@@ -50,8 +50,10 @@ form > label:not([for]) {
     padding-bottom: 0.3rem;
 }
 
-input[type="text"],
-input[type="email"],
+/* Busca todos los input, pero solo aquellos estos 
+   atributos especificos*/
+input[type="text"],    
+input[type="email"],   
 input[type="tel"],
 input[type="date"],
 input[type="time"],
@@ -63,7 +65,8 @@ input[type="file"] {
     border-radius: 8px;
     font-size: 1rem;
     transition: var(--transition);
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    box-sizing: border-box; /* Asegura que el padding no 
+                               afecte el ancho total */
 }
 
 input:focus {
@@ -111,6 +114,11 @@ button:hover {
 
 button:active {
     transform: translateY(0);
+}
+
+label strong,
+p strong {
+    color: red;
 }
 
 

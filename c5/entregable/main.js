@@ -16,6 +16,18 @@ document.getElementById('registroEvento').addEventListener('submit', function (e
         return;
     }
 
+    //  ---- NUEVAS VALIDACIONES  ----
+
+    // Validacion de nombre 
+    if (nombre.trim().length <3) {
+        alert('Ingresa un nombre valido (Minimo de 3 caracteres)');
+    }
+
+    
+
+
+
+
     // Si todo está bien
     alert('Registro exitoso. ¡Gracias por registrarte!');
 });
