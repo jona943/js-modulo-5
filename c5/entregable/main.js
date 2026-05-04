@@ -19,11 +19,23 @@ document.getElementById('registroEvento').addEventListener('submit', function (e
     //  ---- NUEVAS VALIDACIONES  ----
 
     // Validacion de nombre 
-    if (nombre.trim().length <3) {
-        alert('Ingresa un nombre valido (Minimo de 3 caracteres)');
+    if (nombre.trim().length < 3) {
+        alert('Ingresa un nombre valido..!! (Minimo de 3 caracteres)');
+        return;
     }
 
-    
+    // Validacion de Telefono a 10 digitos ni mayor ni menor
+    const valorTelefono = 10;
+    if (telefono.length < valorTelefono) {
+        alert(`Tu numero de telefono debe de ser de 10 digitos..!!`)
+        return;
+    } 
+
+    if (telefono.length > valorTelefono) {
+        alert(`Su número de teléfono es mayor a 10 dígitos.`);
+        alert(`Solo se permite un máximo de ${valorTelefono} Digitos`);
+        return;
+    }
 
 
 
