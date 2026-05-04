@@ -11,7 +11,7 @@ document.getElementById('registroEvento').addEventListener('submit', function (e
     const hora = document.getElementById('hora').value;
 
     // Validaciones básicas
-    if (!nombre || !correo || !telefono || intereses.length === 0 || !fecha || !horario) {
+    if (!nombre || !correo || !telefono || intereses.length === 0 || !fecha || !horario || !hora) {
         alert('Por favor, completa todos los campos obligatorios.');
         return;
     }
@@ -24,6 +24,14 @@ document.getElementById('registroEvento').addEventListener('submit', function (e
         return;
     }
     // ------------------
+
+    // validacion de tipo de dato number
+    const soloNumeros = /^\d+$/.test(telefono);
+    if (!soloNumeros) {
+        alert("El numero de telefono solo debe de contener numeros sin letras o carateres");
+        return;
+    }
+    // --------------------
 
     // Validacion de Telefono a 10 digitos ni mayor ni menor
     const valorTelefono = 10;
@@ -47,6 +55,15 @@ document.getElementById('registroEvento').addEventListener('submit', function (e
 
     if (fechaSeleccionada < hoy) {
         alert('La fecha del evento no puede ser una fecha pasada ');
+        return;
+    }
+
+    // Rango de permitido: 8:00 a 20:00 (hora)
+    const horaSplit = hora.split(':'); // Separacion de horas de minutos
+    const soloHora = parseInt(horaSplit[0]); // Combierte el primer elemento a numero
+
+    if (soloHora < 8 || soloHora > 20) {
+        alert('Los horarios solo son de 8:00 a 20:00. Por favor elige una hora valida');
         return;
     }
 
